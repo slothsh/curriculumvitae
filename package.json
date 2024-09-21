@@ -1,0 +1,22 @@
+{
+    "name": "curriculumvitae",
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "build": "tsc && npm run build-templates && ./html2pdf.sh",
+        "build-templates": "node ./build/cv.mjs",
+        "clean": "rm -rf ./build"
+    },
+    "author": "Stefan Olivier",
+    "license": "MIT",
+    "description": "",
+    "devDependencies": {
+        "@types/node": "^22.2.0",
+        "esbuild": "^0.23.0",
+        "fast-glob": "^3.3.2",
+        "handlebars": "^4.7.8",
+        "node-html-parser": "^6.1.13",
+        "prettier": "^3.3.3",
+        "typescript": "^5.5.4"
+    }
+}

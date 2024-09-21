@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{fullName}}</title>
+        <style>{{{style}}}</style>
+    </head>
+    <body class="page">
+        <div class="container">
+            <div class="banner-background"></div>
+            <div class="container split-panel">
+                <div class="left-panel">
+                    <div class="avatar-container">
+                        <img class="avatar" src="{{avatarLocalUri}}" alt="me">
+                    </div>
+                    <div class="content">
+                        <section class="contact">
+                            <ul>
+                            {{#each contact}}
+                                <li class="icon-spaced">
+                                    {{{inline-svg-icon this.iconLocalUri "12" "12"}}}
+                                    <div>{{this.value}}</div>
+                                </li>
+                            {{/each}}
+                            </ul>
+                        </section>
+
+                        <section class="education">
+                            <div class="heading">
+                                <h3>Education</h3>
+                                <div class="background"></div>
+                            </div>
+                            <ul>
+                                {{#each education}}
+                                <li>
+                                    <h4>{{this.topic}}</h4>
+                                    <p class="bold">{{this.entity}}</p>
+                                    <p>{{{period this.yearStart this.yearEnd}}}</p>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </section>
+
+                        <section class="skills">
+                            <div class="heading">
+                                <h3>Skills</h3>
+                                <div class="background"></div>
+                            </div>
+                            <ul>
+                                {{#each skills}}
+                                <li>
+                                    <p>{{this}}</p>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </section>
+
+                        <section class="languages">
+                            <div class="heading">
+                                <h3>Languages</h3>
+                                <div class="background"></div>
+                            </div>
+                            <ul>
+                                {{#each languages}}
+                                <li>
+                                    <p>{{this}}</p>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <div class="right-panel">
+                    <section class="title">
+                        <h1 class="uppercase bold letter-spacing-wide">{{fullName}}</h1>
+                        <h3 class="regular letter-spacing-narrow">{{title}}</h3>
+                    </section>
+                    <div class="flex flex-column space-between align-start content">
+                        <section>
+                            <div class="icon-spaced">
+                                {{{inline-svg-icon "assets/icons/user.svg" "24" "24"}}}
+                                <h3>About</h3>
+                            </div>
+                            <p class="about">{{about}}</p>
+                        </section>
+                        <section class="experience">
+                            <div class="icon-spaced">
+                                {{{inline-svg-icon "assets/icons/briefcase.svg" "24" "24"}}}
+                                <h3>Work Experience</h3>
+                            </div>
+                            {{#each experience}}
+                                <div class="item">
+                                    <div>
+                                        <p>{{this.yearEnd}}</p>
+                                        <div class="icon">
+                                            {{{inline-svg-icon "assets/icons/down-arrow.svg" "12" "12" style="transform: rotate(180deg)"}}}
+                                        </div>
+                                        <p>{{this.yearStart}}</p>
+                                    </div>
+                                    <div>
+                                        <h4>{{this.entity}}</h4>
+                                        <p>{{this.position}}</p>
+                                        <ul>
+                                            {{#each this.responsibilities}}
+                                                <li>{{this}}</li>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </section>
+                        <section class="references">
+                            <div class="icon-spaced">
+                                {{{inline-svg-icon "assets/icons/book.svg" "24" "24"}}}
+                                <h3>References</h3>
+                            </div>
+                            <div class="grid">
+                                {{#each references}}
+                                    <div class="item">
+                                        <h4>{{this.fullName}}</h4>
+                                        <p>{{this.position}}</p>
+                                        <ul>
+                                            <li><span class="bold">Email: </span>{{this.contact.email}}</li>
+                                        </ul>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

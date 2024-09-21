@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url("/home/slothsh/Development/projects/curriculumvitae/assets/Rubik-VariableFont_wght.ttf") format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* Colors */
+    --light-green: #a6b6a6;
+    --light-blue: #86a6b6;
+    --light-gray: #a6a6a6;
+    --gray: #646464;
+    --dark-gray: #242424;
+
+    /* Measurements */
+    --page-margin: 12mm;
+    --panel-height: 273mm;
+    --right-panel-content-width: 106mm;
+    --banner-height: 36mm;
+    --left-panel-title-width: 52mm
+}
+
+html {
+    font-family: "Rubik", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-background {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: var(--banner-height);
+    background-color: var(--light-blue);
+}
+
+.split-panel {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: var(--page-margin);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.left-panel {
+    width: 40%;
+    height: var(--panel-height);
+    border: 2px solid var(--dark-green);
+    border-radius: 1px;
+}
+
+.left-panel > .content {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-panel > .content > * {
+    margin-left: 4mm;
+}
+
+.left-panel > .content > :first-child {
+    margin-bottom: 4mm;
+}
+
+.left-panel > .content > :not(:first-child) {
+    margin-top: 10mm;
+}
+
+.left-panel > .content > .contact {
+    font-size: 0.75rem;
+}
+
+.left-panel > .content > .contact,
+.left-panel > .content > .education,
+.left-panel > .content > .skills,
+.left-panel > .content > .languages {
+    font-size: 0.75rem;
+}
+
+.left-panel > .content > section > ul:not(:first-child) {
+    margin-top: 10mm;
+}
+
+.left-panel > .content > .contact li,
+.left-panel > .content > .education li,
+.left-panel > .content > .skills li,
+.left-panel > .content > .languages li {
+    list-style-type: none;
+    margin: 3mm 0mm;
+}
+
+.left-panel > .content > .education > :last-child li > :first-child {
+    font-size: 0.9rem;
+}
+
+.left-panel > .content > section > .heading {
+    position: relative;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.left-panel > .content > section > .heading > * {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: inline-block;
+}
+
+.left-panel > .content > section > .heading > .background {
+    height: 1.5rem;
+    width: var(--left-panel-title-width);
+    background-color: var(--light-blue);
+    transform: translateX(8mm);
+    z-index: -1;
+}
+
+.right-panel {
+    width: 60%;
+    height: var(--panel-height);
+    margin-left: 8mm;
+    margin-top: 12mm;
+}
+
+.right-panel > .content > section {
+    width: var(--right-panel-content-width);
+}
+
+.right-panel > .content > :nth-child(2) {
+    margin-top: 20mm;
+}
+
+.right-panel > .content > section:first-child > .about {
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+.right-panel > .content > section > :first-child {
+    margin-bottom: 4mm;
+    letter-spacing: 2px;
+}
+
+.right-panel > .content .experience > .item {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-panel > .content .experience > :not(:first-child) {
+    margin-top: 8mm;
+}
+
+.right-panel > .content .experience > .item > :first-child {
+    display: block;
+    font-size: 0.75rem;
+    width: 12.5%;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.right-panel > .content .experience .item > :first-child > .icon {
+    margin: 2mm 0mm;
+}
+
+.right-panel > .content .experience > .item > :last-child {
+    padding-left: 8mm;
+    border-left: 2px solid var(--light-blue);
+    flex-grow: 1;
+    width: 84mm;
+}
+
+.right-panel > .content .experience > .item > :last-child > :first-child {
+    letter-spacing: 1px;
+}
+
+.right-panel > .content .experience > .item > :last-child > :nth-child(2) {
+    color: var(--gray);
+    font-size: 0.75rem;
+    margin: 2mm 0mm;
+}
+
+.right-panel > .content .experience > .item > :last-child ul {
+    font-size: 0.75rem;
+}
+
+.right-panel > .content .references > .grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.right-panel > .content .references > .grid > .item {
+    margin: 2mm;
+    letter-spacing: 1px;
+}
+
+.right-panel > .content .references > .grid li {
+    list-style-type: none;
+}
+
+.right-panel > .content .references > .grid > .item > :first-child {
+    letter-spacing: 2px;
+}
+
+.right-panel > .content .references > .grid > .item > :nth-child(2) {
+    font-size: 0.75rem;
+    margin-bottom: 2mm;
+}
+
+.right-panel > .content .references > .grid > .item > :last-child {
+    font-size: 0.6rem;
+}
+
+.title {
+    color: var(--dark-gray);
+    margin-bottom: 10mm;
+}
+
+.title > h1 {
+    font-size: 2.5rem;
+}
+
+.title > h3 {
+    font-size: 1.5rem;
+}
+
+.avatar {
+    object-fit: contain;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+    padding: 6mm;
+}
+
+.icon-spaced {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-spaced > :nth-child(2) {
+    margin-left: 4mm;
+    flex-grow: 2;
+}
